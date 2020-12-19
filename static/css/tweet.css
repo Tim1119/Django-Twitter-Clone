@@ -1,0 +1,119 @@
+*{
+    font-family: sans-serif;
+}
+section{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+.column1{
+    flex-basis: 40%;
+    margin: 0px;
+    padding: 0px;
+    background-color: #15202b;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.column1 li .fa-home,
+.column1 li .fa-user-lock,
+.column1 li .fa-bookmark,
+.column1 li .fa-user
+{
+    width:30%;
+    color: white;
+    font-size:30px;
+}
+.column1 li{
+    width: auto;
+    margin: 5px;
+    color: white;
+}
+.column1 li label{
+    text-align: left;
+    width:60%;
+    font-size:22px;
+}
+.column1 ul{
+    list-style-type: none;
+    font-weight: bold;   
+}
+.profile-design li{
+    list-style: none;
+}
+.profile-design{
+    width:96%;
+    margin: auto;
+    color:white;
+    height:auto;
+    background-color: #15202b !important;
+    border:2px solid white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.profile-design .username{
+    color:grey;
+}
+.tweet-class label{
+    display: flex;
+    padding: 5px;
+    font-size: 15px !important;
+    width:100% !important;
+    justify-content: center;
+    align-items: center;
+    
+}
+.tweet-class{
+    font-size: 15px;
+    width:70% !important;
+    background-color:#1da1f2;
+    border-radius: 20px;
+}
+.fa-twitter{
+    margin-left:20px;
+}
+.column2{
+    flex-basis: 60%;
+    background-color: #15202b;
+    overflow-y: scroll;
+}
+.column2-title{
+    color: white;
+    height:40px;
+    background-color:#15202b;
+    padding:10px;
+    display: flex;
+    align-items: center;
+    
+}
+.column2-title h3{
+    font-weight: bolder;
+    font-size: 25px;
+}
+#id_content{
+    margin-top: 3px;
+    width:100%;
+    margin-left: 0%;
+    height:100px;
+    outline-color:#1da1f2;
+    outline: none;
+    border-radius: 10px;
+    padding:5px;
+}
+.tweet-home{
+    margin:5px 0px;
+    font-size: 15px;
+    margin-left: 70%;
+    width:20% !important;
+    background-color:#1da1f2;
+    border-radius: 20px;
+}
+.tweet-form{
+    border-top:solid white 1px; ;
+    border-bottom:solid white 1px; ;
+}
+

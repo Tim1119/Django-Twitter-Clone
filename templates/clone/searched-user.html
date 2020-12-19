@@ -1,0 +1,90 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static './css/home.css' %}">
+<section>
+    <div class="column1">
+        <ul>
+            <li class="twitter-logo">
+                <h1><i class="fab fa-twitter"></i></h1><label></label>
+            <li><i class="fa fa-home"></i><label> <a href="{% url 'home' %} " class="text-white">Home</a> </label>           
+        </ul>
+        <div class="profile-design">
+            {% if  profile.profile_pic %}
+            <img src="{{profile.profile_pic.url}}" alt="" class="user-profile-pic">
+            {% else %}
+            <img src="{% static  'images/default.png' %}" alt="default-png" class="user-profile-pic">
+            {% endif %}
+            <li><i class="far fa-user"></i><label>Profile</label></li>
+            <p>User : {{user.first_name}} {{user.last_name}}</p>
+            <p class="username">Username : {{user.username}}</p>
+            <p class="username">Bio :  {{profile.bio}}</p> 
+            <p class="text-white">Followers :  {{profile.followers.count}} Following :  {{profile.following.count}}</p>            
+        </div>
+    </div>
+    <div class="column2">
+        <div class="column2-title">
+            <h3>Home</h3>
+        </div>
+       
+        {% for post in post%}
+        <div class="all-post-design">
+            <div class="all-post-text">
+                <div class="profile-img">
+                    {% if  profile.profile_pic %}
+                    <img src="{{profile.profile_pic.url}}" alt="" class="user-profile-pic">
+                    {% else %}
+                    <img src="{% static 'images/default.png' %}" alt="default-png" class="user-profile-pic">
+                    {% endif %}                   
+                </div>
+                <div class="post-text">
+                    <h3 class="text-white">{{user.post.comment.count}}</h3>
+                    <h6><span class="fullname">{{user.first_name}} {{user.last_name}}</span><span class="username">@{{user.username}}</span><span class="date">{{searched_user.post.date_posted}}</span></h6>
+                    
+                    <p class="post-text-p">{{post.content}}</p>
+                    <div class="tweet-actions">
+                        <p class="text-white text-right ">
+                            <p class="post-likes">
+                               <p class="text-white no_likes"> {{post.total_likes}} like(s)</p>
+                              
+                                {% if post.likes.all%}
+                               {% for user in post.likes.all%}
+                               {% if request.user == user %}
+                               <form action="{% url 'like_user_post' post.pk%}" method="POST">
+                                {% csrf_token %}
+                                    <button type="submit" name="post_id" value = "{{post.id}}" class="btn btn-danger btn-sm"><i class="fas fa-heart"></i></button>
+                                </form>  
+                                {% else %}
+                                <form action="{% url 'like_user_post' post.pk%}" method="POST">
+                                    {% csrf_token %}
+                                   <button type="submit" name="post_id" value = "{{post.id}}" class="btn btn-primary btn-sm"><i class="fas fa-heart"></i></button>
+                                </form> 
+                                {% endif %}
+                                {% endfor %} 
+                                {% else %}
+                                <form action="{% url 'like_user_post' post.pk%}" method="POST">
+                                    {% csrf_token %}
+                                   <button type="submit" name="post_id" value = "{{post.id}}" class="btn btn-primary btn-sm"><i class="fas fa-heart"></i></button>
+                                </form>
+                                {% endif %}
+                            </p>        
+                            <span><a href="{% url 'comment' post.id %}" class="text-white"><i class="fas fa-comment"></i></a></span>
+                        </p>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+    </div>
+    <div class="column3">
+       
+    </div>
+</section>
+
+
+{% endblock content%}

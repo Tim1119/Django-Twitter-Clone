@@ -1,0 +1,31 @@
+*, body{
+    background-color: #15202b;
+    font-family:Helvetica;
+    font-weight: bold;
+}
+body{
+    margin-top:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-signup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+label,h3{
+    color: white;
+}
+.btn{
+    background-color:#1da1f2;
+    width: 100%;
+    border-radius: 10px;
+    font-family:Helvetica;
+    font-weight: bold;
+    color:white;
+
+}
+li{
+    list-style: none;
+}

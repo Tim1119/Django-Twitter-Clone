@@ -1,0 +1,43 @@
+*, body{
+    background-color: #15202b;
+    font-family:Helvetica;
+    font-weight: bold;
+}
+body{
+    margin-top:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h3{
+    font-weight: bold;
+}
+label,h3{
+    color: white;
+}
+.btn{
+    background-color:#1da1f2;
+    width: 100%;
+    border-radius: 10px;
+    font-family:Helvetica;
+    font-weight: bold;
+    color:white;
+
+}
+li{
+    list-style: none;
+}
+.login-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    flex-direction: column;
+    
+}
+form{
+    width:50%;
+}
+small{
+    margin-top: 15px;
+}

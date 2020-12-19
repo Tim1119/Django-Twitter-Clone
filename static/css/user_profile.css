@@ -1,0 +1,19 @@
+body{
+    background-color:  #15202b !important;
+    font-family:Helvetica;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    color:white;
+}
+.user-profile label{
+    color:white !important;
+    font-weight:bold;
+}
+.tweet-class{
+    font-size: 15px;
+    padding:7px;
+    width:40% !important;
+    background-color:#1da1f2;
+    border-radius: 20px;
+}
